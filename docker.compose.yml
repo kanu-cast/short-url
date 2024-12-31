@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    ports:
+      - "${PORT}:${PORT}"
+    env_file:
+      - .env
+    environment:
+      MONGO_URI: ${MONGO_URI}
+      BASE_URL: ${BASE_URL}
+    depends_on:
+      - mongo
+    command: npm run dev
+  mongo:
+    image: mongo:latest
+    volumes:
+      - ./data:/data/db
+    networks:
+      - backend
+
+ 

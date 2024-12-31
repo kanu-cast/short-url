@@ -5,7 +5,7 @@
 ```
 url-shortener
 │
-├── public
+├── views
 │   ├── index.html
 │   ├── styles.css
 │   └── script.js
@@ -22,6 +22,9 @@ url-shortener
 │   │
 │   ├── utils
 │   │   └── base58.js
+│   │
+│   ├── test
+│   │   └── url.test.ts
 │   │
 │   └── server.js
 │

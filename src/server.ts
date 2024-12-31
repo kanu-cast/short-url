@@ -12,25 +12,15 @@ const port = 3000;
 connectDB();
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../views')));
 
-app.use('/api/url', urlRoutes);
+app.use(urlRoutes);
 
 // Serve index.html for the root path
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
+  res.sendFile(path.join(__dirname, '../views/index.html'));
 });
 
-app.get('/:shortUrl', async (req, res) => {
-    const { shortUrl } = req.params;
-    const url = await Url.findOne({ shortUrl });
-  
-    if (url) {
-      res.redirect(url.longUrl);
-    } else {
-      res.status(404).json('No URL found');
-    }
-});
 
 app.listen(port, () => {
   console.log(`Server is running on PORT${port}`);

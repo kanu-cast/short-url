@@ -1,11 +1,11 @@
 TN:
 SF:src/utils/base58.ts
-FN:4,encode
-FN:14,decode
+FN:4,(anonymous_0)
+FN:14,(anonymous_1)
 FNF:2
 FNH:2
-FNDA:2,encode
-FNDA:2,decode
+FNDA:2,(anonymous_0)
+FNDA:2,(anonymous_1)
 DA:1,1
 DA:2,1
 DA:4,1

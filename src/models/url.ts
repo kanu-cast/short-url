@@ -1,22 +1,15 @@
 import { Schema, model, Document } from 'mongoose';
 
-export interface IUrl extends Document {
-  longUrl: string;
-  shortUrl: string;
+interface IUrl extends Document {
+  originalUrl: string;
+  shortCode: string;
+  clickCount: number;
 }
 
 const urlSchema = new Schema<IUrl>({
-  longUrl: {
-    type: String,
-    required: true
-  },
-  shortUrl: {
-    type: String,
-    required: true,
-    unique: true
-  }
-}, {
-  timestamps: true
+  originalUrl: { type: String, required: true },
+  shortCode: { type: String, required: true, unique: true },
+  clickCount: { type: Number, default: 0 },
 });
 
 const Url = model<IUrl>('Url', urlSchema);

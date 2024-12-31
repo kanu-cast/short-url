@@ -24,10 +24,10 @@
     document.getElementById('url-form').addEventListener('submit', async function (event) {
     event.preventDefault();
     const longUrl = document.getElementById('longUrl').value;
-    const response = await fetch('/api/url/shorten', {
+    const response = await fetch('/api/shorten', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ longUrl })
+      body: JSON.stringify({ originalUrl:longUrl })
     });
 
     const data = await response.json();
