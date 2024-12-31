@@ -4,7 +4,6 @@
 ```
 # URL Shortener Project Summary
 
-Its a lazy saturday afternoon and i get bored easily, so i built this.
 
 ## How It Works
 
