@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    ports:
+      - "${PORT}:${PORT}"
+    env_file:
+      - .env
+    environment:
+      MONGO_URI: ${MONGO_URI}
+      BASE_URL: ${BASE_URL}
+    depends_on:
+      - mongo
+    command: /bin/sh -c "npm run build && npm run start"
+    networks:
+      - backend
+
+  mongo:
+    image: mongo:latest
+    volumes:
+      - ./data:/data/db
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge

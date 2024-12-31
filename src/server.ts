@@ -1,9 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
-import connectDB from './config/mongoose';
-import urlRoutes from './routes/url';
-import Url from './models/url';
+import connectDB from './config/mongoose.config';
+import urlRoutes from './routes/url.routes';
 
 const app = express();
 const port = 3000;

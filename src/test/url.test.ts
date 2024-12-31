@@ -1,4 +1,4 @@
-import { encode, decode } from '../utils/base58';
+import { encode, decode } from '../utils/base58.utils';
 
 test('encode should convert number to base58', () => {
   expect(encode(1)).toBe('2');
